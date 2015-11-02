@@ -1,15 +1,21 @@
 Rails.application.routes.draw do
-  get 'comments/index'
+root 'pictures#index'
 
-  get 'comments/show'
+get '/pictures/new' => 'pictures#new'
 
-  get 'pictures/index'
+post '/pictures/new' => 'pictures#create', as: :create
 
-  get 'pictures/show'
+get '/pictures/:id' => 'pictures#show', as: :picture
 
-  get 'users/index'
+get '/pictures/:id/edit' => 'pictures#edit', as: :edit_picture
 
-  get 'users/show'
+patch '/pictures/:id' => 'pictures#update'
+
+get '/users'=> 'users#index'
+
+resources :users
+
+resources :pictures
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,2 +1,9 @@
-<h1>Pictures#show</h1>
-<p>Find me in app/views/pictures/show.html.erb</p>
+<h1> The Picture You Clicked on: </h1>
+
+<h2> <%= @picture[:location]  %> </h2>
+
+<div>
+  <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" />
+  </a> <br>
+  <%= @picture[:summary]  %>
+</div

@@ -1,2 +1,13 @@
-<h1>Pictures#index</h1>
-<p>Find me in app/views/pictures/index.html.erb</p>
+<h1>Pictures</h1>
+
+<div>
+  <% @pictures.each do |p| %>
+    <a href="/pictures/<%=p.id%>"><img class = 'thumbnails' src="<%= p.url %>" alt="<%= p.location %>" /></a> <br>
+    Location: <%= p.location %> <br>
+    ID: <%= p.id %> <br>
+    <%= link_to 'UPDATE PICTURE', edit_picture_path(p) %> <br>
+  <%end%><br>
+</div>
+
+
+<%= link_to 'ADD A PICTURE', create_path %> <br>
