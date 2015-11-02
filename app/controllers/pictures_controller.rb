@@ -19,8 +19,18 @@ class PicturesController < ApplicationController
     else
       render 'new'
     end
-
   end
+
+  def destroy
+    @picture = Picture.find(params[:id])
+
+    if @picture.destroy
+        redirect_to('/')
+    else
+      render 'show'
+    end
+  end
+
 
   def edit
     @picture = Picture.find(params[:id])
@@ -32,9 +42,11 @@ class PicturesController < ApplicationController
     if @picture.update(picture_params)
       redirect_to('/')
     else
-      render 'edit'
+      render 'show'
     end
   end
+
+
 
   private
   def picture_params

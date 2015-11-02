@@ -6,4 +6,8 @@
   <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" />
   </a> <br>
   <%= @picture[:summary]  %>
-</div
+</div>
+
+<div>
+  <%= link_to 'Delete Picture', delete_picture_path(@picture), method: :delete%>
+</div>
