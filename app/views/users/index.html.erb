@@ -1,8 +1,6 @@
 <h1>Users</h1>
 
-<% @users.each do |u| %>
-  Usernmae: <%=u.username%> <br>
-  Name: <%=u.name%> <br>
-  Email: <%=u.email%> <br>
-  Bio: <%=u.bio%>
+<% @users.each do |user| %>
+  <%= user.email %>
+  <%= user.password_digest %>
 <%end%>

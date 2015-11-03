@@ -1,6 +1,11 @@
 <h1>Pictures</h1>
 
 <div>
+  <%= link_to 'LOG IN', new_session_path %> <br>
+  <%= link_to 'SIGN IN', new_user_path %> <br>
+</div>
+
+<div>
   <% @pictures.each do |p| %>
     <a href="/pictures/<%=p.id%>"><img class = 'thumbnails' src="<%= p.url %>" alt="<%= p.location %>" /></a> <br>
     Location: <%= p.location %> <br>

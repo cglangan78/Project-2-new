@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
 ##Picture Routes##
 root 'pictures#index'
 
@@ -17,7 +18,12 @@ patch '/pictures/:id' => 'pictures#update'
 ##Users Routes ##
 get '/users'=> 'users#index'
 
-resources :users
+##Sessions Routes ##
+get 'login' => 'sessions#new', as: :new_session
+
+resources :sessions, only: [:new, :create, :destroy]
+
+resources :users, only: [:new, :index, :create]
 
 resources :pictures
 
