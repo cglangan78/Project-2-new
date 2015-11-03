@@ -5,8 +5,10 @@
 <div>
   <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" />
   </a> <br>
-  <%= @picture[:summary]  %>
+  <%= @picture[:summary]  %> <br>
+  This was a post from: <%= @picture.user.username %>
 </div>
+
 
 <div>
   <%= link_to 'Delete Picture', delete_picture_path(@picture), method: :delete%>
