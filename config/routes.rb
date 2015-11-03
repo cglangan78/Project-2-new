@@ -24,10 +24,11 @@ get '/users'=> 'users#index'
 get 'login' => 'sessions#new'
 delete 'logout' => 'sessions#destroy'
 
-resources :sessions, only: [:new, :create, :destroy]
+# resources :sessions, only: [:new, :create, :destroy]
+#
+# resources :users, only: [:new, :index, :create]
 
-resources :users, only: [:new, :index, :create]
-
-resources :pictures
-
+resources :pictures do
+  resources :comments
+end
 end
