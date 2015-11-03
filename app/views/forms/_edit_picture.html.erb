@@ -1,0 +1,7 @@
+<%= form_for @picture do |p|  %>
+  <img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /> <br>
+  <%= p.text_field(:url, placeholder: 'URL')%><br>
+  <%= p.text_field(:summary, placeholder: 'Leave a summary')%><br>
+  <%= p.text_field(:location, placeholder: 'City')%><br>
+  <%= p.submit('Edit') %>
+<%end%>

@@ -1,22 +1,40 @@
-<h1> The Picture You Clicked on: </h1>
+<div class="page-header">
+  <h1><%= @picture.location %><small> <%= @picture.date_published %> </small></h1>
+</div>
 
-<h2> <%= @picture[:location]  %> </h2>
 
 <div>
-  <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" />
-  </a> <br>
-  <%= @picture[:summary]  %> <br>
-  This was a post from: <%= @picture.user.username %>
+  <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /></a> <br>
+    <% if @current_user.email == @picture.user.email %>
+      <div>
+        <%= link_to 'Delete Picture', picture_path(@picture), method: :delete%>
+        <%= link_to 'Update Picture', edit_picture_path(@picture) %> <br>
+      </div>
+    <%end%>
+  Caption: <%= @picture[:summary]  %> <br>
+  Posted by: <%= @picture.user.username %>
 </div>
-<div class="">
-  <% @picture.comments.each do |c| %>
-  <%= c.body %>
+
+
+
+
+<div>
+  <% @picture.comments.each do |comment| %>
+    <ul class="list-group">
+      <li class="list-group-item"><%= comment.body %> <br>
+        <small>
+          <% if comment.user %>
+                Commented by: <%= comment.user.username %>
+          <%else %>
+                Anonymous User
+          <%end%>
+        </small>
+      </li>
+    </ul>
   <%end%>
 </div>
 
 
-<div>
-  <%= link_to 'Delete Picture', picture_path(@picture), method: :delete%>
-</div>
+
 
 <%= render('comments/new') %>

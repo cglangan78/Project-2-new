@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @comment = @picture.comments.create(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      redirect_to('/')
+      redirect_to picture_path({id: params[:picture_id]})
     else
       render 'new'
     end
@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
   def show
   end
 
-  def delete
+  def destroy
   end
 
   private

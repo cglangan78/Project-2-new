@@ -13,12 +13,6 @@
  *= require_tree .
  *= require_self
  */
- .thumbnails {
-   height: 300px;
-   width: 300px;
- }
 
- .fullsize {
-   height: 500px;
-   width: 500px;
- }
+ @import "bootstrap-sprockets";
+ @import "bootstrap";

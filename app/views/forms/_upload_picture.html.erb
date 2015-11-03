@@ -1,0 +1,6 @@
+<%= form_for Picture.new do |p|  %>
+  <%= p.text_field(:url, placeholder: 'URL')%> <br>
+  <%= p.text_field(:summary, placeholder: 'Leave a summary')%> <br>
+  <%= p.text_field(:location, placeholder: 'City')%> <br>
+  <%= p.submit('Submit') %>
+<%end%>

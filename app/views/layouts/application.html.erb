@@ -14,13 +14,23 @@
     </div>
   <% end %>
 
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="Brand" src="...">
+        </a>
+      </div>
+        <% if current_user %>
+         <p>Logged In as <%= current_user.email%> </p>
+         <%=link_to 'Log Out', logout_path, method: :delete %>
+       <% end %>
+    </div>
+  </nav>
 
-  <% if current_user %>
-   <p>Logged In as <%= current_user.username%> </p>
-   <%=link_to 'Log Out', logout_path, method: :delete%>
- <% end %>
-
-<%= yield %>
+<div class = "container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

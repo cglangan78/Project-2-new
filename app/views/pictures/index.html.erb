@@ -1,13 +1,16 @@
 
+<%= @current_user.email %>
+
 <h1>Pictures</h1>
 
-<div>
-  <% @pictures.each do |p| %>
-    <a href="/pictures/<%=p.id%>"><img class = 'thumbnails' src="<%= p.url %>" alt="<%= p.location %>" /></a> <br>
-    Location: <%= p.location %> <br>
-    <%= link_to 'UPDATE PICTURE', edit_picture_path(p) %> <br>
-  <%end%><br>
-</div>
+
+<% @pictures.each do |p| %>
+  <a href="/pictures/<%=p.id%>"><img src="<%= p.url %>" alt="<%= p.location %>" /></a> <br>
+      <%= p.user.username %> <br>
+          Location: <%= p.location %> <br>
+<%end%>
+
+
 
 <div>
 <%= link_to 'ADD A PICTURE', create_path %> <br>

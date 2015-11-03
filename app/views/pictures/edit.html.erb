@@ -1,8 +1,3 @@
 <h1>Edit A Picture</h1>
-  <%= form_for @picture do |p|  %>
-  <%= p.text_field(:url, placeholder: 'URL')%>
-  <%= p.text_field(:summary, placeholder: 'Leave a summary')%>
-  <%= p.text_field(:location, placeholder: 'City')%>
-  <%# p.hidden_field :user_id, :value => @user.id %>
-  <%= p.submit('Edit') %>
-<%end%>
+
+<%= render('forms/edit_picture') %>

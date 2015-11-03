@@ -9,10 +9,16 @@ class PicturesController < ApplicationController
   end
 
   def show
-    @picture = Picture.find(params[:id])
-    @comment = Comment.new
-    @comments = Comment.where(picture_id: @picture.id)
+    if current_user
+      @picture = Picture.find(params[:id])
+      @comment = Comment.new
+      @comments = Comment.where(picture_id: @picture.id)
+      @current_user = current_user
+    else
+      redirect_to login_path
+    end
   end
+
 
   def new
     @picture = Picture.new
