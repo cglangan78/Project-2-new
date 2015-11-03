@@ -18,8 +18,11 @@ patch '/pictures/:id' => 'pictures#update'
 ##Users Routes ##
 get '/users'=> 'users#index'
 
+
+
 ##Sessions Routes ##
-get 'login' => 'sessions#new', as: :new_session
+get 'login' => 'sessions#new'
+delete 'logout' => 'sessions#destroy'
 
 resources :sessions, only: [:new, :create, :destroy]
 

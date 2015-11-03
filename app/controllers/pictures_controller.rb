@@ -1,6 +1,11 @@
 class PicturesController < ApplicationController
   def index
-    @pictures = Picture.all
+    if current_user
+      @pictures = Picture.all
+      @current_user = current_user
+    else
+      redirect_to login_path
+    end
   end
 
   def show
