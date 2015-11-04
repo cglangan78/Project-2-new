@@ -1,6 +1,10 @@
 <% @pictures.each do |p| %>
   <a href="/pictures/<%=p.id%>"><img class = "tinysize" src="<%= p.url %>" alt="<%= p.location %>" /></a> <br>
+    <% if p.user.username %>
       Uploaded By: <%= p.user.username %> <br>
+      <%else%>
+        Uploaded By: <%= p.user.email %>  
+    <%end%>
           City: <%= p.location %> <br>
 <%end%>
 
