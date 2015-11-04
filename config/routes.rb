@@ -26,6 +26,7 @@ resources :sessions, only: [:new, :create, :destroy]
 resources :users, only: [:new, :index, :create]
 
 resources :pictures do
-  resources :comments, only: [:create, :update, :destroy]
+  resources :comments, only: [:edit, :create, :update, :destroy]
+
 end
 end

@@ -17,10 +17,33 @@ class CommentsController < ApplicationController
     end
   end
 
-  def show
+
+
+
+  def edit
+    @picture = Picture.find(params[:picture_id])
+    @comment = Comment.find(params[:id])
   end
 
+  def update
+    @comment = Comment.find(params[:id])
+
+    if @comment.update(comment_params)
+      redirect_to picture_path({id: params[:picture_id]})
+    else
+      redirect_to root_path
+    end
+  end
+
+
+
   def destroy
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      redirect_to picture_comment_path({id: params[:picture_id]})
+    else
+      redirect_to root_path
+    end
   end
 
   private

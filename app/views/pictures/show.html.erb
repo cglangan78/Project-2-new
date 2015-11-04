@@ -30,11 +30,15 @@
           <%end%>
         </small>
       </li>
+      <% if @current_user.id == comment.user.id %>
+         <%= link_to "Delete Comment", {controller: "comments", action: "destroy",
+           id: comment.id, picture_id: comment.picture_id}, method: :delete %>
+         <%= link_to 'Update Comment', {controller: "comments", action: "edit",
+           id: comment.id, picture_id: comment.picture_id} %> <br>
+       <% end %>
     </ul>
   <%end%>
 </div>
-
-
 
 
 <%= render('comments/new') %>
