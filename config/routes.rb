@@ -23,7 +23,7 @@ delete 'logout' => 'sessions#destroy'
 
 resources :sessions, only: [:new, :create, :destroy]
 
-resources :users, only: [:new, :index, :create]
+resources :users, only: [:new, :index, :create, :edit, :update, :destroy]
 
 resources :pictures do
   resources :comments, only: [:edit, :create, :update, :destroy]
