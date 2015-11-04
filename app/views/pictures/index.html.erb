@@ -1,10 +1,7 @@
-<h1>Pictures</h1>
-
-
 <% @pictures.each do |p| %>
-  <a href="/pictures/<%=p.id%>"><img src="<%= p.url %>" alt="<%= p.location %>" /></a> <br>
-      <%= p.user.username %> <br>
-          Location: <%= p.location %> <br>
+  <a href="/pictures/<%=p.id%>"><img class = "tinysize" src="<%= p.url %>" alt="<%= p.location %>" /></a> <br>
+      Uploaded By: <%= p.user.username %> <br>
+          City: <%= p.location %> <br>
 <%end%>
 
 
