@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-offset-5 col-md-3">
       <div class="form-login">
-        <h3>Edit A User</h3>
+        <h3>Edit User</h3>
         <%= form_for @user do |f| %>
           <% if @user.errors.any? %>
           <div class="error_messages">
@@ -27,13 +27,17 @@
       <div class="field">
         <%= f.password_field :password_confirmation, placeholder: "password confirmation", class: "form-control input-sm chat-input" %>
       </div><br>
+      <div class="field">
+        <%= f.file_field :avatar, placeholder: 'Profile Picture', class: "form-control input-sm chat-input" %>
+      </div><br>
       <div class="wrapper">
         <div class="actions">
           <span class="group-btn"> <%= f.submit "Update User", class:"btn btn-primary btn-md" %>
             <i class="fa fa-sign-in"></i>
           </span>
+          <span class="group-btn"> <%= link_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?'}, class:"btn btn-primary btn-md" %>
+            <i class="fa fa-sign-in"></i>
+          </span>
         </div>
       </div>
     <% end %>`
-
-  <%= link_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?'} %>
