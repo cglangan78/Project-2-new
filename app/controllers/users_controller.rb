@@ -28,7 +28,13 @@ class UsersController < ApplicationController
       redirect_to '/'
     else
       render 'edit'
-    end  
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to login_path
   end
 
   private

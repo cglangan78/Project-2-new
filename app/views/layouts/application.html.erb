@@ -19,12 +19,12 @@
             </div>
           <% end %>
       </div>
-        <% if current_user %>
-         <p class="navbar-text"> Welcome: <%= current_user.email%> </p>
-         <p class="navbar-text"><%=link_to 'Log Out', logout_path, method: :delete %> </p>
-         <p class="navbar-text"><%= link_to 'Add A Picture', create_path %> <br>
-          <p class="navbar-text"><%= link_to 'Edit User', edit_user_path(current_user) %> <br>
-       <% end %>
+      <% if current_user %>
+       <p class="navbar-text"> Welcome: <%= current_user.email%> </p>
+       <p class="navbar-text"><%=link_to 'Log Out', logout_path, method: :delete %> </p>
+       <p class="navbar-text"><%= link_to 'Add A Picture', create_path %> <br>
+       <p class="navbar-text"><%= link_to 'Edit User', edit_user_path(current_user) %> <br>
+     <% end %>
     </div>
   </nav>
 
