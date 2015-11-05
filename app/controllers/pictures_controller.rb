@@ -64,6 +64,6 @@ class PicturesController < ApplicationController
 
   private
   def picture_params
-    params.require(:picture).permit([:url, :summary, :location])
+    params.require(:picture).permit([:image, :url, :summary, :location])
   end
 end

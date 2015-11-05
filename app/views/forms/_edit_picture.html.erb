@@ -1,7 +1,36 @@
-<%= form_for @picture do |p|  %>
-  <img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /> <br>
-  <%= p.text_field(:url, placeholder: 'URL')%><br>
-  <%= p.text_field(:summary, placeholder: 'Leave a summary')%><br>
-  <%= p.text_field(:location, placeholder: 'City')%><br>
-  <%= p.submit('Edit') %>
-<%end%>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-5 col-md-3">
+      <div class="form-login">
+        <h3>Edit The Picture</h3>
+          <%= form_for @picture do |p|  %>
+            <% if @picture.url != "" %>
+                <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /></a><br>
+            <%else%>
+              <%= image_tag(@picture.image(:large)) %>
+            <%end%><br>
+
+        <div class="field">
+          <%= p.file_field :image, placeholder: 'Picture', class: "form-control input-sm chat-input"%>
+        </div><br>
+        <div class="field">
+          <%= p.text_field :url, placeholder: 'URL', class: "form-control input-sm chat-input"%>
+        </div><br>
+        <div class="field">
+          <%= p.text_field :summary, placeholder: 'Leave a summary', class: "form-control input-sm chat-input"%>
+        </div><br>
+        <div class="field">
+          <%= p.text_field :location, placeholder: 'City', class: "form-control input-sm chat-input"%>
+        </div><br>
+        <div class="wrapper">
+          <div class="actions">
+            <span class="group-btn"><%= p.submit 'Edit', class:"btn btn-primary btn-md"  %>
+            <i class="fa fa-sign-in"></i>
+            </span>
+          </div>
+        <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

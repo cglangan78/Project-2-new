@@ -1,4 +1,12 @@
-<%= form_for [@picture, @comment] do |f| %>
-  <%=f.text_area :body %>
-  <%=f.submit "Submit Comment" %>
-<%end%>
+<div class="row">
+  <div class="form-group">
+    <p class = "comment"><label for="code" >Add A Comment</label></p>
+    <%= form_for [@picture, @comment] do |f| %>
+    <%=f.text_area :body, class: 'form-control input-lg comment'%> <br>
+
+      <div class="row comment" >
+      <%=f.submit "Submit Comment", class: 'btn btn-default' %>
+      </div>
+    <%end%>
+  </div>
+</div>

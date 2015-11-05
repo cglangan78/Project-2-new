@@ -1,18 +1,24 @@
 <div class="page-header">
-  <h1><%= @picture.location %><small> <%= @picture.date_published %> </small></h1>
+  <h1><%= @picture.location %></h1>
 </div>
 
 
 <div>
-  <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /></a> <br>
+  <% if @picture.url != "" %>
+      <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /></a> <br>
+  <%else%>
+    <%= image_tag((@picture.image(:large)), :class => "fullsize") %>
+  <%end%>
+
     <% if @current_user.email == @picture.user.email %>
       <div>
         <%= link_to 'Delete Picture', picture_path(@picture), method: :delete%>
-        <%= link_to 'Update Picture', edit_picture_path(@picture) %> <br>
+        <%= link_to 'Edit Picture', edit_picture_path(@picture) %> <br>
       </div>
     <%end%>
+  <small> <%= @picture.date_published %> </small> <br>
   Caption: <%= @picture[:summary]  %> <br>
-  Posted by: <%= @picture.user.username %>
+  Posted by: <%= @picture.user.username %><br>
 </div>
 
 
@@ -38,6 +44,5 @@
     </ul>
   <%end%>
 </div>
-
 
 <%= render('comments/new') %>

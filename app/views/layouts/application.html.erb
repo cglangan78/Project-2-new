@@ -10,9 +10,6 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/">
-          <img class = "TinyPic" alt="Brand" src= "http://orig07.deviantart.net/efe6/f/2008/139/7/8/spray_can_stencil_by_avahk.jpg">
-        </a>
           <% flash.each do |name, message| %>
             <div class="navbar-text flash-message flash-message-<%= name %>">
               <%= message %>
@@ -25,6 +22,7 @@
        <p class="navbar-text"><%=link_to 'Log Out', logout_path, method: :delete %> </p>
        <p class="navbar-text"><%= link_to 'Add A Picture', create_path %> <br>
        <p class="navbar-text"><%= link_to 'Edit User', edit_user_path(current_user) %> <br>
+       <p class="navbar-text"><%= link_to 'Home', root_path %> <br>  
      <% end %>
     </div>
   </nav>

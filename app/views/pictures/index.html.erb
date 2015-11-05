@@ -1,31 +1,20 @@
-<% @pictures.each do |p| %>
-<a href="/pictures/<%=p.id%>"><img class = "tinysize" src="<%= p.url %>" alt="<%= p.location %>" /></a> <br>
- <% if p.user.email %>
-   Uploaded By: <%= p.user.username %> <br>
-   <%else%>
-     Uploaded By: <%= p.user.username %> <br>
- <%end%>
-       City: <%= p.location %> <br>
-<%end%>
+<div class="centerColumn">
+      <% @pictures.each do |p| %>
+            <% if p.url != "" %>
+              <a href="/pictures/<%=p.id%>"><img class = "tinysize" href=""src="<%= p.url %>" alt="<%= p.location %>" /></a>
+            <%else%>
+              <a href="/pictures/<%=p.id%>"><%= image_tag((p.image(:large)), :class => "tinysize") %></a>
+            <%end%>
 
-
-
-<nav>
-  <ul class="pagination">
-    <li>
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li><a href="/">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li>
-      <a href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+      <div class="caption">
+          <h3> <%= p.location %> </h3>
+          <p><% if p.user.email %>
+            Uploaded By: <%= p.user.username %> <br>
+            <%else%>
+              Uploaded By: <%= p.user.username %> <br>
+            <%end%></p>
+            <p><a href="/pictures/<%=p.id%>" class="btn btn-primary" role="button">Picture</a>
+               <a href="/users/" class="btn btn-default" role="button">User</a></p>
+        <%end%> <br>
+        </div>
+  </div>

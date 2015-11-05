@@ -3,7 +3,12 @@
     <div class="col-md-offset-5 col-md-3">
       <div class="form-login">
         <h3>Add A Picture</h3>
-        <%= form_for Picture.new do |p|  %>
+        <%= form_for Picture.new, html: { multipart: true }  do |p|  %>
+
+        <div class="field">
+          <%= p.file_field :image, placeholder: 'Picture', class: "form-control input-sm chat-input"%>
+        </div><br>
+
           <div class="field">
             <%= p.text_field :url, placeholder: 'URL', class: "form-control input-sm chat-input"%>
           </div><br>
@@ -20,3 +25,8 @@
               </span>
           </div>
         <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
