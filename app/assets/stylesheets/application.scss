@@ -18,9 +18,18 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+* {
+  font-family: 'Abel', sans-serif;
+}
+
 .TinyPic {
   height: 50px;
   width: 50px;
+}
+
+.avatarsize{
+  height: 100px;
+  width: 100px;
 }
 
 .tinysize {
@@ -58,9 +67,4 @@
 
 .frame:hover {
   opacity: .5;
-}
-
-.avatarsize{
-  height: 100px;
-  width: 100px;
 }
