@@ -18,11 +18,12 @@
       </div>
       <% if current_user %>
        <img class = "navbar-text TinyPic" alt="Brand" src= <%= current_user.avatar %> >
-       <p class="navbar-text"> Welcome: <%= current_user.email%> </p>
-       <p class="navbar-text"><%=link_to 'Log Out', logout_path, method: :delete %> </p>
-       <p class="navbar-text"><%= link_to 'Add A Picture', create_path %> <br>
-       <p class="navbar-text"><%= link_to 'Edit User', edit_user_path(current_user) %> <br>
-       <p class="navbar-text"><%= link_to 'Home', root_path %> <br>  
+       <p class="navbar-text toptext"> Welcome: <%= current_user.username%> </p>
+       <p class="navbar-text btn btn-default topbtn"><%=link_to 'Log Out', logout_path, method: :delete %> </p>
+       <p class="navbar-text btn btn-default topbtn"><%= link_to 'Add A Picture', create_path %> <br>
+       <p class="navbar-text btn btn-default topbtn"><%= link_to 'Edit User', edit_user_path(current_user) %> <br>
+       <p class="navbar-text btn btn-default topbtn"><%= link_to 'Users', users_path %> <br>
+       <p class="navbar-text btn btn-default topbtn"><%= link_to 'Home', root_path %> <br>
      <% end %>
     </div>
   </nav>

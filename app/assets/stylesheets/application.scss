@@ -24,8 +24,6 @@
 }
 
 .tinysize {
-  height: 400px;
-  width: 400px;
   border: black solid 5px;
 }
 
@@ -37,4 +35,32 @@
 
 .comment{
   margin-left: 20px;
+}
+
+.frame{
+  padding: 11px;
+}
+
+
+.frame img{
+  width: 100%
+}
+
+.topbtn{
+  background-color: white;
+  color: black;
+  font-size: 15px;
+}
+
+.toptext{
+  font-size: 25px;
+}
+
+.frame:hover {
+  opacity: .5;
+}
+
+.avatarsize{
+  height: 100px;
+  width: 100px;
 }

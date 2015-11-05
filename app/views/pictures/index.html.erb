@@ -1,20 +1,23 @@
-<div class="centerColumn">
-      <% @pictures.each do |p| %>
-            <% if p.url != "" %>
-              <a href="/pictures/<%=p.id%>"><img class = "tinysize" href=""src="<%= p.url %>" alt="<%= p.location %>" /></a>
-            <%else%>
-              <a href="/pictures/<%=p.id%>"><%= image_tag((p.image(:large)), :class => "tinysize") %></a>
-            <%end%>
-
-      <div class="caption">
-          <h3> <%= p.location %> </h3>
-          <p><% if p.user.email %>
-            Uploaded By: <%= p.user.username %> <br>
-            <%else%>
-              Uploaded By: <%= p.user.username %> <br>
-            <%end%></p>
-            <p><a href="/pictures/<%=p.id%>" class="btn btn-primary" role="button">Picture</a>
-               <a href="/users/" class="btn btn-default" role="button">User</a></p>
-        <%end%> <br>
+  <div class="row">
+    <% @pictures.each do |p| %>
+      <div class="col-md-4">
+        <div class ="frame">
+          <% if p.url != "" %>
+            <a href="/pictures/<%=p.id%>"><img class = "tinysize" href=""src="<%= p.url %>" alt="<%= p.location %>" /></a>
+          <%else%>
+            <a href="/pictures/<%=p.id%>"><%= image_tag((p.image(:large)), :class => "tinysize") %></a>
+          <%end%>
         </div>
+        <div class="caption">
+            <h3> <%= p.location %> </h3> 
+            <p><% if p.user.email %>
+              Uploaded By: <%= p.user.username %> <br>
+              <%else%>
+                Uploaded By: <%= p.user.username %> <br>
+              <%end%></p>
+              <p><a href="/pictures/<%=p.id%>" class="btn btn-primary" role="button">Picture</a>
+                 <a href="/users/" class="btn btn-default" role="button">User</a></p>
+        </div>
+      </div>
+   <%end%><br>
   </div>

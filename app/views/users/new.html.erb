@@ -5,8 +5,9 @@
         <h3>Sign Up</h3>
         <%= form_for @user do |f| %>
           <% if @user.errors.any? %>
-          <div class="error_messages">
-            <h2>Form is invalid</h2>
+          <div class="error_messages alert alert-danger fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Form is invalid</strong>
             <ul>
               <% for message in @user.errors.full_messages %>
               <li><%= message %></li>
@@ -33,6 +34,9 @@
       <div class="wrapper">
         <div class="actions">
           <span class="group-btn"> <%= f.submit "Create User", class:"btn btn-primary btn-md" %>
+            <i class="fa fa-sign-in"></i>
+          </span>
+          <span class="group-btn"> <%= link_to 'Back to Login', login_path, class:"btn btn-primary btn-md" %>
             <i class="fa fa-sign-in"></i>
           </span>
         </div>

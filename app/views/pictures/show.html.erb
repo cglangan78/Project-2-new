@@ -4,6 +4,7 @@
 
 
 <div>
+  Caption: <%= @picture[:summary] %> <br><br>
   <% if @picture.url != "" %>
       <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /></a> <br>
   <%else%>
@@ -16,9 +17,7 @@
         <%= link_to 'Edit Picture', edit_picture_path(@picture) %> <br>
       </div>
     <%end%>
-  <small> <%= @picture.date_published %> </small> <br>
-  Caption: <%= @picture[:summary]  %> <br>
-  Posted by: <%= @picture.user.username %><br>
+  <small> Posted by <%= @picture.user.username %> on <%= @picture.date_published %><br> </small><br><br>
 </div>
 
 

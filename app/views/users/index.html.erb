@@ -2,5 +2,10 @@
 
 <% @users.each do |user| %>
   <%= user.username %> <br>
-  <%= user.email %><br>
+  <%= user.email %> <br>
+    <% if user.avatar != "" %>
+      <a href="/users/<%=user.id%>"><img class = "avatarsize" href=""src="<%= user.avatar %>" alt="Missing" /></a><br><br>
+    <%else%>
+      <a href="/users/<%=user.id%>"><%= image_tag((user.image(:large)), :class => "avatarsize") %></a><br><br>
+    <%end%>
 <%end%>
