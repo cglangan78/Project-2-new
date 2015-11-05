@@ -1,13 +1,13 @@
 <h1>Users</h1>
 
-<% @users.each do |user| %>
-  <div class="col-md-4">
-    <% if user.avatar != "" %>
-      <a href="/users/<%=user.id%>"><img class = "avatarsize" href=""src="<%= user.avatar %>" alt="Missing" /></a><br><br>
-    <%else%>
-      <a href="/users/<%=user.id%>"><%= image_tag((user.image(:large)), :class => "avatarsize") %></a><br><br>
-    <%end%>
-  <%= user.username %> <br>
-  <%= user.email %> <br>
+  <% @users.each do |user| %>
+    <div class="col-md-4 user-index">
+      <% if user.avatar != "" %>
+        <a href="/users/<%=user.id%>"><img class = "avatarsize" href=""src="<%= user.avatar %>" alt="Missing" /></a><br><br>
+      <%else%>
+        <a href="/users/<%=user.id%>"><%= image_tag((user.image(:large)), :class => "avatarsize") %></a><br><br>
+      <%end%>
+    <%= user.username %> <br>
+    <%= user.email %> <br>
   </div>
-<%end%>
+  <%end%>

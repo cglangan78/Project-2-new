@@ -50,9 +50,12 @@
   padding: 11px;
 }
 
-
 .frame img{
   width: 100%
+}
+
+.frame:hover {
+  opacity: .5;
 }
 
 .topbtn{
@@ -65,6 +68,10 @@
   font-size: 25px;
 }
 
-.frame:hover {
-  opacity: .5;
+.user-index{
+  padding-top: 40px;
+}
+
+#edit-picture-form{
+  padding-top: 200px;
 }

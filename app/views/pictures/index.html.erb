@@ -9,11 +9,11 @@
           <%end%>
         </div>
         <div class="caption">
-            <h3> <%= p.location %> </h3> 
+            <h3> <%= p.location %> </h3>
             <p><% if p.user.email %>
-              Uploaded By: <%= p.user.username %> <br>
+              Uploaded By: <%= p.user.username %> <br> <%= time_ago_in_words(p.created_at) %> ago<br>
               <%else%>
-                Uploaded By: <%= p.user.username %> <br>
+                Uploaded By: <%= p.user.username %> <br> <%= time_ago_in_words(p.created_at) %> ago<br>
               <%end%></p>
               <p><a href="/pictures/<%=p.id%>" class="btn btn-primary" role="button">Picture</a>
                  <a href="/users/" class="btn btn-default" role="button">User</a></p>

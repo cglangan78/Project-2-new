@@ -29,6 +29,9 @@
         <%= f.password_field :password_confirmation, placeholder: "password confirmation", class: "form-control input-sm chat-input" %>
       </div><br>
       <div class="field">
+        <%= f.text_field :bio, placeholder: "short bio", class: "form-control input-sm chat-input" %>
+      </div><br>
+      <div class="field">
         <label for= "avatar">Please Upload a Profile Picture</label>
         <%= f.file_field :avatar, placeholder: 'Image', class: "form-control input-sm chat-input" %>
       </div><br>

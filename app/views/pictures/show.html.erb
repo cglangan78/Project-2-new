@@ -4,7 +4,7 @@
 
 
 <div>
-  Caption: <%= @picture[:summary] %> <br><br>
+  <h4> Caption: <%= @picture[:summary] %> <h4>
   <% if @picture.url != "" %>
       <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /></a> <br>
   <%else%>
@@ -13,10 +13,10 @@
 
     <% if @current_user.email == @picture.user.email %>
       <div>
-        <%= link_to 'Delete Picture', picture_path(@picture), method: :delete%>
+        <%= link_to 'Delete Picture', picture_path(@picture), method: :delete, data: { confirm: 'Are you sure?'}%>
         <%= link_to 'Edit Picture', edit_picture_path(@picture) %> <br>
       </div>
-    <%end%>
+    <%end%><br>
   <small> Posted by <%= @picture.user.username %> on <%= @picture.date_published %><br> </small><br><br>
 </div>
 
@@ -28,7 +28,7 @@
       <li class="list-group-item"><%= comment.body %> <br>
         <small>
           <% if comment.user %>
-                Commented by: <%= comment.user.username %> on <%= comment.date_published %>
+                Commented by: <%= comment.user.username %> <%= time_ago_in_words(comment.created_at) %> ago
           <%else %>
                 Anonymous User
           <%end%>

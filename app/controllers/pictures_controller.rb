@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
   def index
     if current_user
-      @pictures = Picture.all
+      @pictures = Picture.all.order("created_at DESC")
       @current_user = current_user
     else
       redirect_to login_path
