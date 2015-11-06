@@ -4,7 +4,7 @@
   <p2><%= @user.bio %> </p2>
 </div>
 
-<div>
+<div class = "box">
   <% @user.pictures.each do |p| %>
     <% if p.url != "" %>
       <a href="/pictures/<%=p.id%>"><img class = "fullsize" href=""src="<%= p.url %>" alt="<%= p.location %>" /></a>

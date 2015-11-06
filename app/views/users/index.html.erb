@@ -1,7 +1,7 @@
 <h1>Users</h1>
 
   <% @users.each do |user| %>
-    <div class="col-md-4 user-index">
+    <div class="col-md-4 user-index box">
       <% if user.avatar != "" %>
         <a href="/users/<%=user.id%>"><img class = "avatarsize" href=""src="<%= user.avatar %>" alt="Missing" /></a><br><br>
       <%else%>

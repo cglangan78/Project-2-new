@@ -1,21 +1,23 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="form-login">
-        <h2>Edit The Picture</h2>
-          <%= form_for @picture do |p|  %>
-            <% if @picture.url != "" %>
-                <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /></a><br>
-            <%else%>
-              <%= image_tag(@picture.image(:large)) %>
-            <%end%><br>
+  <div class="row box">
+
+    <div class="col-md-2"></div>
+
+      <div class="col-md-6">
+        <div class="form-login">
+          <h2>Edit The Picture</h2>
+            <%= form_for @picture do |p|  %>
+              <% if @picture.url != "" %>
+                  <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /></a><br>
+              <%else%>
+                <%= image_tag(@picture.image(:large)) %>
+              <%end%><br>
+            </div>
           </div>
-        </div>
 
-    <div class = "col-md-2"></div>
+    <div class="col-md-2">
 
-    <div class="col-md-3">
-      <div class="form-login" id="edit-picture-form">
+      <div class="form-login">
         <div class="field">
           <%= p.text_field :summary, placeholder: 'Leave a summary', class: "form-control input-sm chat-input"%>
         </div><br>
@@ -35,5 +37,6 @@
           </div>
         </div>
       </div>
+      <div class="col-md-2"></div>
     </div>
   </div>

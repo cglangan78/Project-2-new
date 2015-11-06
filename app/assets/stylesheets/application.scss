@@ -22,6 +22,12 @@
   font-family: 'Abel', sans-serif;
 }
 
+body {
+ background-image: url('Paint.jpeg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ }
+
 .TinyPic {
   height: 50px;
   width: 50px;
@@ -70,6 +76,12 @@
 
 .user-index{
   padding-top: 40px;
+}
+
+.box{
+  border: black solid 2px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
 }
 
 #edit-picture-form{

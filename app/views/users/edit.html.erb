@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-offset-5 col-md-3">
+    <div class="col-md-offset-5 col-md-3 box">
       <div class="form-login">
         <h3>Edit User</h3>
         <%= form_for @user do |f| %>
@@ -35,10 +35,10 @@
       </div><br>
       <div class="wrapper">
         <div class="actions">
-          <span class="group-btn"> <%= f.submit "Update User", class:"btn btn-primary btn-md" %>
+          <span class="group-btn"> <%= f.submit "Update", class: "btn btn-primary btn-md" %>
             <i class="fa fa-sign-in"></i>
           </span>
-          <span class="group-btn"> <%= link_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?'}, class:"btn btn-primary btn-md" %>
+          <span class="group-btn"> <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?'}, class:"btn btn-primary btn-md" %>
             <i class="fa fa-sign-in"></i>
           </span>
         </div>
