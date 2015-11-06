@@ -1,13 +1,24 @@
-<h1>Users</h1>
+<% @users.each_with_index do |user, i| %>
+  <% if (i + 1) % 3 == 1 %>
+      <div class="row">
+    <% end %>
 
-  <% @users.each do |user| %>
-    <div class="col-md-4 user-index box">
-      <% if user.avatar != "" %>
-        <a href="/users/<%=user.id%>"><img class = "avatarsize" href=""src="<%= user.avatar %>" alt="Missing" /></a><br><br>
-      <%else%>
-        <a href="/users/<%=user.id%>"><%= image_tag((user.image(:large)), :class => "avatarsize") %></a><br><br>
-      <%end%>
-    <%= user.username %> <br>
-    <%= user.email %> <br>
-  </div>
-  <%end%>
+    <div class="col-md-4 user-index">
+        <div class = "thumbnail">
+            <% if user.avatar != "" %>
+              <a href="/users/<%=user.id%>"><img class = "avatarsize"
+                href=""src="<%= user.avatar %>" alt="Missing" /></a><br><br>
+            <%else%>
+              <a href="/users/<%=user.id%>"><%= image_tag((user.image(:large)),
+              :class => "avatarsize") %></a><br><br>
+            <%end%>
+            <div class = "caption">
+            <%= user.username %> <br>
+            <%= user.email %> <br>
+           </div>
+        </div>
+    </div>
+  <% if (i + 1) % 3 == 0 %>
+		</div>
+	<% end %>
+<% end %>

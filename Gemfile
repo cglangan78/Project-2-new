@@ -35,6 +35,8 @@ gem 'paperclip'
 
 gem 'carrierwave'
 
+gem 'acts_as_votable', '~> 0.10.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

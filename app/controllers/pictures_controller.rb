@@ -60,6 +60,18 @@ class PicturesController < ApplicationController
     end
   end
 
+  def upvote
+    @picture = Picture.find(params[:id])
+    @picture.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @picture = Picture.find(params[:id])
+    @picture.downvote_by current_user
+    redirect_to :back
+  end
+
 
 
   private

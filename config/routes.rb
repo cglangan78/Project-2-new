@@ -28,6 +28,10 @@ resources :sessions, only: [:new, :create, :destroy]
 resources :users, only: [:new, :index, :create, :edit, :update, :destroy, :show]
 
 resources :pictures do
+  member do
+    put "like"    =>  "pictures#upvote"
+    put "dislike" => "pictures#downvote"
+  end
   resources :comments, only: [:edit, :create, :update, :destroy]
 end
 end

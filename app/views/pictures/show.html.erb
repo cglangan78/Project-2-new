@@ -19,6 +19,16 @@
         </div>
       <%end%><br>
     <small> Posted by <%= @picture.user.username %> on <%= @picture.date_published %><br> </small><br><br>
+
+    <%= link_to like_picture_path(@picture), method: :put, class: "btn btn-default btn-sm", id: "thumbsup" do %>
+      <span class="glyphicon glyphicon-thumbs-up"></span>
+    <%= @picture.get_upvotes.size %>
+    <% end %>
+    <%= link_to dislike_picture_path(@picture), method: :put, class: "btn btn-default btn-sm", id: "thumbsdown" do %>
+      <span class="glyphicon glyphicon-thumbs-down"></span>
+    <%= @picture.get_downvotes.size %>
+    <% end %>
+
   </div>
 
 

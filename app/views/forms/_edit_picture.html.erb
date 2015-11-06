@@ -1,42 +1,41 @@
-<div class="container">
-  <div class="row box">
+<div class="col-md-3"></div>
+  <div class = "row">
+    <div class="col-md-6">
+      <div class = "thumbnail box">
+      <h2>Edit The Picture</h2>
 
-    <div class="col-md-2"></div>
+          <%= form_for @picture do |p|  %>
+            <% if @picture.url != "" %>
+                <a href="/"><img src="<%= @picture[:url] %>"
+                   alt="<%= @picture[:location] %>" /></a><br>
+            <%else%>
+              <%= image_tag(@picture.image(:large)) %>
+            <%end%><br>
 
-      <div class="col-md-6">
-        <div class="form-login">
-          <h2>Edit The Picture</h2>
-            <%= form_for @picture do |p|  %>
-              <% if @picture.url != "" %>
-                  <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /></a><br>
-              <%else%>
-                <%= image_tag(@picture.image(:large)) %>
-              <%end%><br>
-            </div>
-          </div>
-
-    <div class="col-md-2">
-
-      <div class="form-login">
-        <div class="field">
-          <%= p.text_field :summary, placeholder: 'Leave a summary', class: "form-control input-sm chat-input"%>
-        </div><br>
-        <div class="field">
-          <%= p.text_field :location, placeholder: 'City', class: "form-control input-sm chat-input"%>
-        </div><br>
-          <div class="wrapper">
-              <div class="actions">
-                <span class="group-btn"><%= p.submit 'Edit', class:"btn btn-primary btn-md"  %>
-                <i class="fa fa-sign-in"></i>
-                </span>
-                <span class="group-btn"> <%= link_to 'Go Back', picture_path, class:"btn btn-primary btn-md" %>
-                  <i class="fa fa-sign-in"></i>
-                </span>
+          <div class = "caption">
+            <div class="field">
+              <%= p.text_field :summary, placeholder: 'Leave a summary',
+                  class: "form-control input-sm chat-input"%>
+            </div><br>
+            <div class="field">
+              <%= p.text_field :location, placeholder: 'City',
+                  class: "form-control input-sm chat-input"%>
+            </div><br>
+              <div class="wrapper">
+                <div class="actions">
+                  <span class="group-btn"><%= p.submit 'Edit',
+                    class:"btn btn-primary btn-md"  %>
+                    <i class="fa fa-sign-in"></i>
+                  </span>
+                  <span class="group-btn"> <%= link_to 'Go Back', picture_path,
+                    class:"btn btn-primary btn-md" %>
+                    <i class="fa fa-sign-in"></i>
+                  </span>
+                </div>
               </div>
-            <%end%>
           </div>
         </div>
-      </div>
-      <div class="col-md-2"></div>
-    </div>
+      <%end%>
+   </div>
   </div>
+<div class="col-md-3"></div>
