@@ -6,9 +6,9 @@
     <div class="col-md-4">
       <div class ="thumbnail">
         <% if p.url != "" %>
-          <a href="/pictures/<%=p.id%>"><img class = "tinysize" href=""src="<%= p.url %>" alt="<%= p.location %>" /></a>
+          <a href="/pictures/<%=p.id%>"><img class = "tinysize frame" href=""src="<%= p.url %>" alt="<%= p.location %>" /></a>
         <%else%>
-          <a href="/pictures/<%=p.id%>"><%= image_tag((p.image(:large)), :class => "tinysize") %></a>
+          <a href="/pictures/<%=p.id%>"><%= image_tag((p.image(:large)), :class => "tinysize frame") %></a>
         <%end%>
 
       <div class="caption">
@@ -20,7 +20,7 @@
             <%end%>
           </p>
            <p><a href="/pictures/<%=p.id%>" class="btn btn-primary" role="button">Picture</a>
-               <a href="/users/" class="btn btn-default" role="button">User</a></p>
+               <a href="/users/<%=p.user.id%>"class="btn btn-default" role="button">User</a></p>
                <%= link_to like_picture_path(p), method: :put, class: "btn btn-default btn-sm", id: "thumbsup" do %>
                  <span class="glyphicon glyphicon-thumbs-up"></span>
                <%= p.get_upvotes.size %>

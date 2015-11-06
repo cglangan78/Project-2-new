@@ -34,7 +34,8 @@ body {
 }
 
 .avatarsize{
-  width: 100%
+  height: 100px;
+  width: 100px;
 }
 
 .tinysize {
@@ -51,9 +52,7 @@ body {
   margin-left: 20px;
 }
 
-.frame{
-  padding: 11px;
-}
+
 
 .frame img{
   width: 100%
@@ -86,6 +85,10 @@ body {
 .thumbnail {
   border: black solid 4px;
   background-color: rgba(255, 255, 255, 0.9);
+}
+
+.frontpage-toptext {
+  text-align: center;
 }
 
 #edit-picture-form{

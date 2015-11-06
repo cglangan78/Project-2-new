@@ -1,10 +1,9 @@
-<div class = "box">
-  <div class="page-header">
-    <h1><%= @picture.location %></h1>
-  </div>
+<div class="col-md-3"></div>
+  <div class = "row box">
+    <div class="col-md-6">
+      <h1><%= @picture.location %></h1>
 
-
-  <div>
+  <div class = "caption">
     <h4> Caption: <%= @picture[:summary] %> <h4>
     <% if @picture.url != "" %>
         <a href="/"><img class = "fullsize" src="<%= @picture[:url] %>" alt="<%= @picture[:location] %>" /></a> <br>
@@ -12,13 +11,19 @@
       <%= image_tag((@picture.image(:large)), :class => "fullsize") %>
     <%end%>
 
-      <% if @current_user.email == @picture.user.email %>
-        <div>
-          <%= link_to 'Delete Picture', picture_path(@picture), method: :delete, data: { confirm: 'Are you sure?'}%>
-          <%= link_to 'Edit Picture', edit_picture_path(@picture) %> <br>
-        </div>
-      <%end%><br>
     <small> Posted by <%= @picture.user.username %> on <%= @picture.date_published %><br> </small><br><br>
+
+      <% if @current_user.email == @picture.user.email %>
+
+      <div class="wrapper">
+        <div class="actions">
+          <span class="group-btn"><%= link_to 'Delete Picture', picture_path(@picture), method: :delete, data: { confirm: 'Are you sure?'}, class:"btn btn-danger btn-md" %>
+          </span>
+          <span class="group-btn "><%= link_to 'Edit Picture', edit_picture_path(@picture), class:"btn btn-primary btn-md" %> <br>
+          </span>
+        </div>
+      </div>
+      <%end%><br>
 
     <%= link_to like_picture_path(@picture), method: :put, class: "btn btn-default btn-sm", id: "thumbsup" do %>
       <span class="glyphicon glyphicon-thumbs-up"></span>
@@ -57,3 +62,6 @@
 
   <%= render('comments/new') %>
 </div>
+</div>
+</div>
+<div class="col-md-3"></div>

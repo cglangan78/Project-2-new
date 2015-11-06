@@ -12,9 +12,11 @@
   <div class="col-md-4">
     <div class ="thumbnail">
       <% if u.url != "" %>
-        <a href="/pictures/<%=u.id%>"><img class = "tinysize" href=""src="<%= u.url %>" alt="<%= u.location %>" /></a>
+        <a href="/pictures/<%=u.id%>"><img class = "tinysize"
+          href=""src="<%= u.url %>" alt="<%= u.location %>" /></a>
       <%else%>
-        <a href="/pictures/<%=u.id%>"><%= image_tag((u.image(:large)), :class => "tinysize") %></a>
+        <a href="/pictures/<%=u.id%>"><%= image_tag((u.image(:large)),
+        :class => "tinysize") %></a>
       <%end%>
 
       <div class="caption">
