@@ -1,8 +1,14 @@
-<div class = "box">
-  <h1> Edit A Comment </h1>
+<div class="col-md-3"></div>
+  <div class = "row">
+    <div class="col-md-6">
+      <div class = "thumbnail box">
+        <h1> Edit A Comment </h1>
 
-  <%= form_for [@picture, @comment] do |f| %>
-      <%= f.text_area :body %><br>
-      <%= f.submit "Change your comment!" %>
-  <% end %>
-</div>
+        <%= form_for [@picture, @comment] do |f| %>
+            <%= f.text_area :body,   class: "form-control input-sm chat-input" %><br>
+            <%= f.submit "Change your comment!", class:"btn btn-primary btn-md"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>  

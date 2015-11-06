@@ -51,10 +51,10 @@
           </small>
         </li>
         <% if @current_user.id == comment.user.id %>
-           <%= link_to "Delete Comment", {controller: "comments", action: "destroy",
-             id: comment.id, picture_id: comment.picture_id}, method: :delete %>
-           <%= link_to 'Update Comment', {controller: "comments", action: "edit",
-             id: comment.id, picture_id: comment.picture_id} %> <br>
+           <span class="group-btn"><%= link_to "Delete Comment", {controller: "comments", action: "destroy",
+             id: comment.id, picture_id: comment.picture_id}, method: :delete, class:"btn btn-danger btn-md" %></span>
+           <span class="group-btn"><%= link_to 'Update Comment', {controller: "comments", action: "edit",
+             id: comment.id, picture_id: comment.picture_id}, class:"btn btn-primary btn-md" %> <br></span>
          <% end %>
       </ul>
     <%end%>

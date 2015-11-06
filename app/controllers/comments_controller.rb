@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.destroy
-      redirect_to picture_comment_path({id: params[:picture_id]})
+      redirect_to picture_path({id: params[:picture_id]})
     else
       redirect_to root_path
     end
